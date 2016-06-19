@@ -1,4 +1,14 @@
 <body>
-  <app></app>
+  <div id="app">
+    <h1>A Vue-router Enabled Single Page App</h1>
+    <p>
+      <!-- use v-link directive for navigation. -->
+      <a v-link="{ path: '/email' }">E-Mail</a>
+      <a v-link="{ path: '/site' }">About</a>
+      <a v-link="{ path: '/blog' }">Blog</a>
+    </p>
+    <!-- route outlet -->
+    <router-view></router-view>
+  </div>
   <script src="build.js"></script>
 </body>
