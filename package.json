@@ -4,7 +4,9 @@
   "description": " a simple Webpack + vue-loader project for learning vue.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --inline --hot",
+    "build": "webpack -p"
   },
   "author": "drodata<drodata@foxmail.com>",
   "license": "ISC",
