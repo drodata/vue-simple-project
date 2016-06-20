@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Index from './components/Index'
+import Demo from './components/Demo'
+import DemoIndex from './components/demo/Index'
 
 Vue.use(VueRouter);
 
@@ -25,13 +28,32 @@ var Contact = Vue.extend({
 
 var App = Vue.extend({})
 
-var router = new VueRouter()
+var router = new VueRouter({
+})
 router.map({
+  '/': {
+    component: Index
+  },
   '/email': {
     component: Email
   },
+  '/show/:category/:id': {
+    name: 'show',
+    component: {
+      template: '<p>The category is {{$route.params.category}}</p>' +
+        '<p>params: {{$route.params | json}}</p>'
+    }
+  },
   '/site': {
     component: Site
+  },
+  '/demo': {
+    component: Demo,
+    subRoutes: {
+      '/': {
+        component: DemoIndex
+      }
+    }
   },
   '/blog': {
     component: Blog,
