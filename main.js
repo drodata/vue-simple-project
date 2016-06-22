@@ -65,6 +65,11 @@ router.map({
         component: Contact
       }
     }
+  },
+  '/async': {
+    component: function (resolve) {
+      require(['./components/Async'], resolve)
+    }
   }
 })
 
