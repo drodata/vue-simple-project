@@ -4,6 +4,7 @@
     <a v-link="{name: 'show', params: {category: 'php', id: 3}, exact: true}">Show PHP</a>
     <a v-link="{path: '/demo', exact: true}">Demo</a>
     <a v-link="{path: '/async', exact: true}">Async Lasy Load</a>
+    <a v-link="{path: '/pipeline', exact: true}">Pipeline Transition</a>
   </div>
 </template>
 

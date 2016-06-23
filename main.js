@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Index from './components/Index'
 import Demo from './components/Demo'
 import DemoIndex from './components/demo/Index'
+import Pipeline from './components/Pipeline'
+import PipelineIndex from './components/pipeline/Index'
 
 Vue.use(VueRouter);
 
@@ -29,6 +31,8 @@ var Contact = Vue.extend({
 var App = Vue.extend({})
 
 var router = new VueRouter({
+  history: true,
+  saveScrollPosition: true
 })
 router.map({
   '/': {
@@ -69,6 +73,14 @@ router.map({
   '/async': {
     component: function (resolve) {
       require(['./components/Async'], resolve)
+    }
+  },
+  '/pipeline': {
+    component: Pipeline,
+    subRoutes: {
+      '/': {
+        component: PipelineIndex
+      }
     }
   }
 })
