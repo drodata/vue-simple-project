@@ -14,7 +14,7 @@ var Blog = Vue.extend({
   template: '<p>http://notes.drodata.com</p>'
 })
 
-var App = Vue.extend({})
+var App = Vue.extend(require('./components/App'))
 
 var router = new VueRouter()
 router.map({
